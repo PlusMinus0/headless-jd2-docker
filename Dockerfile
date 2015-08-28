@@ -10,5 +10,9 @@ RUN \
 	java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar
 
 
+ADD start.sh /opt/JDownloader/
+RUN chmod +x /opt/JDownloader/start.sh
+
+
 # Run this when the container is started
-CMD java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar
+CMD /opt/JDownloader/startJD2.sh
