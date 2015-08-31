@@ -9,7 +9,7 @@ function stopJD2 {
 
 trap stopJD2 EXIT
 
-java -Djava.awt.headless=true -jar JDownloader.jar &
+java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar &
 
 while true; do
 	sleep inf
