@@ -13,6 +13,9 @@ trap stopJD2 EXIT
 addgroup --gid $GID jdusers
 useradd -M --uid $UID --gid $GID jduser
 
+chown -R jduser:jdusers /opt/JDownloader/cfg
+chown -R jduser:jdusers /root/Downloads
+
 su jduser -c 'java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar &'
 
 while true; do
