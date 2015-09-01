@@ -2,10 +2,6 @@ FROM java:jre
 
 MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
-# For running the JDownloder as a normal user
-ENV UID=1000
-ENV GID=1000
-
 
 # Create directory, downloader JD" and start JD2 for the initial update and creation of config files.
 RUN \
