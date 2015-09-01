@@ -10,7 +10,6 @@ function stopJD2 {
 trap stopJD2 EXIT
 
 # Add a user to run the jdownloader
-addgroup --gid $GID jdusers
 useradd -M --uid $UID --gid $GID jduser
 
 su jduser -c 'java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar &'
