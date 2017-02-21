@@ -1,4 +1,4 @@
-FROM java:jre
+FROM openjdk:8-jre
 
 MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
