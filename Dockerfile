@@ -1,4 +1,4 @@
-FROM openjdk:8-jre
+FROM dordoka:rpi-java8
 
 MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
