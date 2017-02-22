@@ -1,4 +1,4 @@
-FROM dordoka:rpi-java8
+FROM dordoka/rpi-java8
 
 MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
