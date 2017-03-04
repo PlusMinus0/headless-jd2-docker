@@ -2,11 +2,24 @@
 Headless JDownloader 2 Docker Container
 
 ## Running the container
-0. `sudo su`
-1. Create a folder on your host for the configuration files (eg. sudo mkdir /config/jd2)
-2. run `docker run -d --name jd2 -v /config/jd2:/opt/JDownloader/cfg -v /home/user/Downloads:/root/Downloads plusminus/jdownloader2-headless`
-3. stop the container `docker stop jd2`
-4. On your host, enter your credentials (in quotes) to the file `org.jdownloader.api.myjdownloader.MyJDownloaderSettings.json` as in `{ "password" : "mypasswort", "email" : "email@home.org" }`
-5. Start the container
+0.  `sudo su`
+1.  Create a folder on your host for the configuration files (eg. sudo mkdir /config/jd2)
+2.  Run the container:
 
+    `docker run -d --name jd2 -v /config/jd2:/opt/JDownloader/cfg -v /home/user/Downloads:/downloads gotofoo/jdownloader2-headless`
+3.  Wait a minute for the container to initialize
+4.  Stop the container:
+    
+    `docker stop jd2`
+5.  On your host, enter your credentials (in quotes) to the file `org.jdownloader.api.myjdownloader.MyJDownloaderSettings.json` as in:
+    
+    `{ "password" : "mypasswort", "email" : "email@home.org" }`
+6.  Start the container:
 
+    `docker start jd2`
+    
+## Optional environment variables
+|Environment Variable|Description|
+|--------------------|-----------|
+|UID|Specifies the UID the daemon should run as. All created files will be owned by this UID. Defaults to 0 for root.|
+|GID|Specifies the GID for all created files. This only works in combination with the UID. Defaults to 0 for root.|
