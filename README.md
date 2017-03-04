@@ -1,12 +1,19 @@
-# headless-jd2-docker
+# docker-jdownloader2-headless
 Headless JDownloader 2 Docker Container
 
 ## Running the container
-0.  `sudo su`
+0.  Become root:
+    
+    `sudo su`
 1.  Create a folder on your host for the configuration files (eg. sudo mkdir /config/jd2)
 2.  Run the container:
 
-    `docker run -d --name jd2 -v /config/jd2:/opt/JDownloader/cfg -v /home/user/Downloads:/downloads gotofoo/jdownloader2-headless`
+    ```
+    docker run -d --name jd2 \
+        -v /config/jd2:/opt/JDownloader/cfg \
+        -v /home/user/Downloads:/downloads \
+        gotofoo/jdownloader2-headless
+    ```
 3.  Wait a minute for the container to initialize
 4.  Stop the container:
     
