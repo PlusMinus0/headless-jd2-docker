@@ -1,6 +1,7 @@
 # headless-jd2-docker
 Headless JDownloader 2 Docker Container
-The directory is not included as a root user in the host, the downloads are submitted with the Docker User
+This Fork from plusminus/jdownloader2-headless don't use the root User on the Host Volumes.
+The downloads are submitted with the Docker User.
 
 ## Running the container
 0. `sudo su`
