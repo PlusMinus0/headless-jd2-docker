@@ -1,7 +1,7 @@
 # headless-jdownloader2-docker
 Headless JDownloader 2 Docker Container
 
-Now it is possible to use a Host Volumes, and this Files are not stored with the root User.
+Now it is possible to use a Host Volumes, and this Files are not stored with the root User.<br>
 The downloads are submitted with the User who create/run the Docker Container.
 
 ## Running the container
