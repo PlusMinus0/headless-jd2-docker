@@ -7,9 +7,28 @@ function stopJD2 {
 	exit
 }
 
+if [ "$GID" ]
+then
+	GROUP=jdownloader
+	groupadd -g $GID $GROUP
+else
+	GROUP=root
+fi
+
+if [ "$UID" ] 
+then
+	USER=jdownloader
+	useradd -r -s /bin/false -u $UID $USER
+else
+	USER=root
+fi
+
+useradd -G $GROUP $USER
+chown -R $USER:$GROUP /opt/JDownloader
+
 trap stopJD2 EXIT
 
-java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar &
+su -c "java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar &" -s /bin/bash $USER
 
 while true; do
 	sleep inf
