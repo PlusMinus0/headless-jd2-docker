@@ -18,7 +18,7 @@ fi
 if [ "$UID" ] 
 then
 	USER=jdownloader
-	useradd -r -s /bin/false -u $UID $USER
+	useradd -r -N -s /bin/false -u $UID $USER
 else
 	USER=root
 fi
