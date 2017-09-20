@@ -1,6 +1,6 @@
 FROM openjdk:8-jre
 
-MAINTAINER mr-bolle
+MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
 # Create directory, downloader JD" and start JD2 for the initial update and creation of config files.
 RUN \
