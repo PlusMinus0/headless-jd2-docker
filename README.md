@@ -38,3 +38,5 @@ Headless JDownloader 2 Docker Container
 |--------------------|-----------|
 |UID|Specifies the UID the daemon should run as. All created files will be owned by this UID. Defaults to 0 for root.|
 |GID|Specifies the GID for all created files. This only works in combination with the UID. Defaults to 0 for root.|
+
+Not setting these will default to root:root. If you are required to set all environment varibles, setting these to 0 will fall back to the default.
