@@ -7,7 +7,7 @@ function stopJD2 {
 	exit
 }
 
-if [ "$GID" ]
+if [ "$GID" ] && [ "$GID" -ne "0" ]
 then
 	GROUP=jdownloader
 	groupadd -g $GID $GROUP
@@ -15,7 +15,7 @@ else
 	GROUP=root
 fi
 
-if [ "$UID" ] 
+if [ "$UID" ] && [ "$UID" -ne "0" ]
 then
 	USER=jdownloader
 	useradd -r -N -s /bin/false -u $UID $USER
