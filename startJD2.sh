@@ -1,12 +1,5 @@
 #!/bin/bash
 
-function stopJD2 {
-	PID=$(cat JDownloader.pid)
-	kill $PID
-	wait $PID
-	exit
-}
-
 if [ "$GID" ] && [ "$GID" -ne "0" ]
 then
 	GROUP=jdownloader
@@ -26,11 +19,5 @@ fi
 useradd -G $GROUP $USER
 chown -R $USER:$GROUP /opt/JDownloader
 
-trap stopJD2 EXIT
-
-su -c "java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar &" -s /bin/bash $USER
-
-while true; do
-	sleep inf
-done
+exec su-exec ${USER}:${GROUP} "$@"
 
