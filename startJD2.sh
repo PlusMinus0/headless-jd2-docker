@@ -16,7 +16,7 @@ else
 	USER=root
 fi
 
-useradd -G $GROUP $USER
+adduser -G $GROUP $USER
 chown -R $USER:$GROUP /opt/JDownloader
 
 exec su-exec ${USER}:${GROUP} "$@"
