@@ -25,7 +25,7 @@ Headless JDownloader 2 Docker Container
 5.  On your host, enter your credentials (in quotes) to the file `org.jdownloader.api.myjdownloader.MyJDownloaderSettings.json` as in:
 
     ```
-    { "password" : "mypasswort", "email" : "email@home.org" }
+    { "email" : "email@home.org", "password" : "mypasswort" }
     ```
 6.  Start the container:
 
