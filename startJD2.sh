@@ -19,5 +19,10 @@ fi
 adduser -G $GROUP $USER
 chown -R $USER:$GROUP /opt/JDownloader
 
-exec su-exec ${USER}:${GROUP} "$@"
+# Sometimes this gets deleted. Just copy it every time.
+cp /opt/JDownloader/sevenzip* /opt/JDownloader/libs/
 
+su-exec ${USER}:${GROUP} "$@"
+
+# Keep container alive when jd2 restarts
+while sleep 3600; do :; done
