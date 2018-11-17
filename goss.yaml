@@ -1,7 +1,7 @@
 file:
   /opt/JDownloader/JDownloader.jar:
     exists: true
-    mode: "0664"
+    mode: "0644"
     filetype: file
     contains: []
   /opt/JDownloader/sevenzipjbinding1509.jar:
