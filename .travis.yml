@@ -1,0 +1,13 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: "Build and Test"
+      before_script:
+        - curl -fsSL https://goss.rocks/install | sudo sh
+      script:
+        - ./build-n-test.sh
