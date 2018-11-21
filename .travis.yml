@@ -1,0 +1,23 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: "Build and Test"
+      before_script:
+        - curl -fsSL https://goss.rocks/install | sudo sh
+      script:
+        - ./build-n-test.sh
+
+notifications:
+  webhooks:
+    urls:
+      - https://registry.hub.docker.com/u/plusminus/jdownloader2-headless/trigger/e50efaab-36ed-4900-b08d-3cf8944ca9cd/
+    on_success: always
+    on_failure: never
+    on_start: never
+    on_cancel: never
+    on_error: never
