@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Set defaults for uid and gid to not be root
-if [ -n $GID ]; then GID=100;  fi
-if [ -n $UID ]; then UID=1000; fi
+if [ -z $GID ]; then GID=100;  fi
+if [ -z $UID ]; then UID=1000; fi
 
 if [ "$GID" -ne "0" ]; then
 	GROUP=jdownloader
