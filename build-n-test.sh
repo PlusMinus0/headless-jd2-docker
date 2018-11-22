@@ -15,7 +15,12 @@ for image in "${images[@]}"; do
     docker build -t $tag -f $image.Dockerfile .
 
     echo "Testing image"
+    cp goss-default.yaml goss.yaml
     dgoss run $tag
+
+    echo "Testing again with UID and GID"
+    cp goss-uid-test.yaml goss.yaml
+    dgoss run -e UID=1001 -e GID=101 $tag
 done
 
 

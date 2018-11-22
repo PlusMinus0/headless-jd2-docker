@@ -1,17 +1,26 @@
 file:
   /opt/JDownloader/JDownloader.jar:
     exists: true
-    mode: "0644"
+    mode:
+      or:
+      - "0664"
+      - "0644"
     filetype: file
     contains: []
   /opt/JDownloader/sevenzipjbinding1509.jar:
     exists: true
-    mode: "0664"
+    mode:
+      or:
+      - "0664"
+      - "0644"
     filetype: file
     contains: []
   /opt/JDownloader/sevenzipjbinding1509Linux.jar:
     exists: true
-    mode: "0664"
+    mode:
+      or:
+      - "0664"
+      - "0644"
     filetype: file
     contains: []
 package:
