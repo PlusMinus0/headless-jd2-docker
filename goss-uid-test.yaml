@@ -1,0 +1,9 @@
+user:
+  jdownloader:
+    exists: true
+    uid: 1001
+    gid: 101
+    groups:
+    - jdownloader
+    home: []
+    shell: /bin/false

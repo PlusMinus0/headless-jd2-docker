@@ -1,7 +1,14 @@
-# headless-jd2-docker
-Headless JDownloader 2 Docker Container
+[![Build Status](https://travis-ci.com/PlusMinus0/headless-jd2-docker.svg?branch=master)](https://travis-ci.com/PlusMinus0/headless-jd2-docker)
+# Supported tags
+ * [`latest`, `debian`, `v3-debian` (debian.Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/master/debian.Dockerfile)
+ * [`alpine`, `v3-alpine` (alpine.Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/master/alpine.Dockerfile)
+ * [`dev-debian` (debian.Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/dev/debian.Dockerfile)
+ * [`dev-alpine` (alpine.Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/dev/alpine.Dockerfile)
+ * [`v2.1` (Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/v2.1/Dockerfile)
+ * [`v2.0` (Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/v2.0/Dockerfile)
 
-## Running the container
+
+# Running the container
 0.  Become root if your user is not part of the docker group:
 
     ```
@@ -33,7 +40,7 @@ Headless JDownloader 2 Docker Container
     docker start jd2
     ```
     
-## Optional environment variables
+# Optional environment variables
 |Environment Variable|Description|
 |--------------------|-----------|
 |UID|Specifies the UID the daemon should run as. All created files will be owned by this UID. Defaults to 1000.|
