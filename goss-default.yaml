@@ -23,6 +23,10 @@ file:
       - "0644"
     filetype: file
     contains: []
+  /tmp:
+    exists: true
+    mode: "1777"
+    filetype: directory
 package:
   ffmpeg:
     installed: true
