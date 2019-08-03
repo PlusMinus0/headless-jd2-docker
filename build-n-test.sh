@@ -21,6 +21,9 @@ for image in "${images[@]}"; do
 
     echo "Testing again with UID and GID"
     GOSS_FILES_PATH=./tests/uid-test dgoss run -e UID=1001 -e GID=101 $tag
+
+    echo "Testing again with EMAIL and PASSWORD"
+    GOSS_FILES_PATH=./tests/credentials-test dgoss run -e EMAIL=mymail@example.com -e PASSWORD=mypassword $tag
 done
 
 
