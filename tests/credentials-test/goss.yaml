@@ -1,0 +1,11 @@
+file:
+  /opt/JDownloader/cfg/org.jdownloader.api.myjdownloader.MyJDownloaderSettings.json:
+    exists: true
+    mode:
+      or:
+      - "0664"
+      - "0644"
+    filetype: file
+    contains:
+      - mymail@example.com
+      - mypassword

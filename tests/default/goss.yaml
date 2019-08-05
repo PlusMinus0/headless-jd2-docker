@@ -30,6 +30,8 @@ file:
 package:
   ffmpeg:
     installed: true
+  jq:
+    installed: true
 user:
   jdownloader:
     exists: true

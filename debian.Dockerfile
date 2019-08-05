@@ -4,7 +4,7 @@ MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
 # Create directory, and start JD2 for the initial update and creation of config files.
 RUN apt-get update && apt-get dist-upgrade -yqq && \
-	apt-get install -yqq tini ffmpeg wget make gcc && \	
+	apt-get install -yqq tini ffmpeg wget make gcc jq && \
 	mkdir -p /opt/JDownloader/libs && \
 	wget -O /opt/JDownloader/JDownloader.jar --user-agent="https://hub.docker.com/r/plusminus/jdownloader2-headless/" http://installer.jdownloader.org/JDownloader.jar && \
 	java -Djava.awt.headless=true -jar /opt/JDownloader/JDownloader.jar && \

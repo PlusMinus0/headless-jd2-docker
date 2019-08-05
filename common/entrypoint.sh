@@ -21,6 +21,17 @@ else
     usermod -ag $GID
 fi
 
+# Set MyJDownloader credentials
+CONFIG_FILE="/opt/JDownloader/cfg/org.jdownloader.api.myjdownloader.MyJDownloaderSettings.json"
+if [ ! -z "$EMAIL" ] ; then
+    if [ ! -f "$CONFIG_FILE" ] || [ ! -s "$CONFIG_FILE" ] ; then
+        echo '{}' > "$CONFIG_FILE"
+    fi
+
+    CFG=$(jq -r --arg EMAIL "$EMAIL" --arg PASSWORD "$PASSWORD" '.email = $EMAIL | .password = $PASSWORD' "$CONFIG_FILE")
+    [ ! -z "$CFG" ] && echo "$CFG" > "$CONFIG_FILE"
+fi
+
 chown -R $UID:$GID /opt/JDownloader
 
 # Sometimes this gets deleted. Just copy it every time.
