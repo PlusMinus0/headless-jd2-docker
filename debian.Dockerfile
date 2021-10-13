@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim-sid
+FROM docker.io/openjdk:11-jre-slim-bullseye
 
 MAINTAINER PlusMinus <piddlpiddl@gmail.com>
 
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get dist-upgrade -yqq && \
 	wget -O /tmp/su-exec.tar.gz https://github.com/ncopa/su-exec/archive/v0.2.tar.gz && \
 	cd /tmp/ && tar -xf su-exec.tar.gz && cd su-exec-0.2 && make && cp su-exec /usr/bin &&\
 	apt-get purge -yqq wget make gcc && apt-get autoremove -yqq && cd / && rm -rf /tmp/*
-# Beta sevenzipbindings and entrypoint
+
 COPY common/* /opt/JDownloader/
 RUN chmod +x /opt/JDownloader/entrypoint.sh
 
